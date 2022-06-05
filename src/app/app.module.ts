@@ -9,14 +9,14 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { SideBarComponent } from './features/side-bar/side-bar.component';
-import { ObjectCardComponent } from './features/object-card/object-card/object-card.component';
+import { RouterModule } from '@angular/router';
+import { FeaturesModule } from './features/features.module';
+import { environment } from 'src/environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideBarComponent,
-    ObjectCardComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,10 @@ import { ObjectCardComponent } from './features/object-card/object-card/object-c
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    RouterModule,
+    FeaturesModule,
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
   ],
   providers: [],
   bootstrap: [AppComponent]
