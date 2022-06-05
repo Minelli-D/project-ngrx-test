@@ -1,16 +1,5 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="drawer.toggle()" >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>{{title}}</span>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
+<app-header-button class="menu-button"></app-header-button>
 </mat-toolbar>
 
 <mat-drawer-container class="example-container">
@@ -18,7 +7,7 @@
   <h1>test</h1>
   <mat-drawer mode="side" #drawer opened="">
 
-    <side-bar [sideBarStatus] = "drawer.opened" (closeMenuButton)="closeSideBar(drawer)"></side-bar>
+    <side-bar></side-bar>
 
   </mat-drawer>
   <mat-drawer-content class="custom-drawer-contenet" >
